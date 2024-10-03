@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer ##
+
+    </title>
+</head>
+
+<body>
+    <h2 style="display: flex;color: blue;justify-content: center;align-items: center;"><u>COLOR CHANGER</u></h2>
+    <span class="button" id="grey">Grey color</span>
+    <span class="button" id="blue">Blue color</span>
+    <span class="button" id="yellow">Yellow color</span>
+    <span class="button" id="red">Red Color</span>
+    <h2 style="color:coral;margin-left: 300px;"><br><br><br><br><br>Click on over one color among the above and see the
+        background color change accordingly </h2>
+
+
+</body>
+<style>
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+        border-radius: 5px;
+        border: 2px solid;
+        float: left;
+    }
+
+    #grey {
+        background: grey;
+        margin-left: 35vw;
+    }
+    #blue {
+        background: blue;
+    }
+    #yellow {
+        background: yellow;
+    }
+    #red {
+        background: red;
+    }
+</style>
+<script>
+    const buttons=document.querySelectorAll('.button')
+     const body=document.querySelector('body')
+
+    buttons.forEach(function(x){
+        x.addEventListener('click',function(e){
+        if(e.target.id==='grey')
+        {
+            body.style.backgroundColor=e.target.id
+        }
+        if(e.target.id==='blue')
+        {
+            body.style.backgroundColor=e.target.id
+        }
+        if(e.target.id==='yellow')
+        {
+            body.style.backgroundColor=e.target.id
+        }
+        if(e.target.id==='red')
+        {
+            body.style.backgroundColor=e.target.id
+        }
+
+    })})
+</script>
+</html>

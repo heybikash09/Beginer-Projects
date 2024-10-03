@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calcutor</title>
+</head>
+
+<body style="background-color: antiquewhite;">
+
+    <h2>BMI CALCILATOR</h2>
+    <form id="frm" action="http://www.google.com" method="post">
+        <label for="wt" style="font-size: large;">Enter your Weight</label>
+        <input type="text" placeholder="in kg" id="wt"><br>
+        <label for="ht" style="font-size: large">Enter your Height</label>
+        <input type="text" placeholder="in cm" id="ht"><br>
+        <button type="submit" id="cal">Calculate</button>
+    </form>
+    <div id="res">
+        <h2>-------Result------</h2>
+        <p style=" display:flex ;justify-content: center;background:white;;" id="result"></p>
+        <h3>>>>>>>>>>Bmi Range<<<<<<<<<<<< /h3>
+                <p>Under Wieght--If BMI less than 18.5</p>
+                <p>Healthy Weight--If BMI is bewtwen 18.5 to 24.9 </p>
+                <p>Over Wieight--If BMI is between 25.0 to 29.9</p>
+                <p>Obes range--If BMI is greater than 30.0</p>
+    </div>
+
+</body>
+<style>
+    h3 {
+        margin-left: 40vw;
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #cal {
+        height: 5vh;
+        width: 20vw;
+        margin-top: 50px;
+        margin-left: 90px;
+    }
+
+    #res {
+        position: relative;
+        margin-top: 10px;
+        background: orange;
+        height: 50vh;
+    }
+
+    #form {
+        background: aqua;
+    }
+
+    #wt {
+        margin-top: 10px;
+    }
+
+    #ht {
+        margin-top: 10px;
+    }
+</style>
+<script>
+    const form = document.querySelector('#frm')
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const weight = parseInt(document.querySelector('#wt').value)
+        const height = parseInt(document.querySelector('#ht').value)
+        const req = document.querySelector('#result')
+        if (weight == '' || weight < 0 || isNaN(weight))
+            req.innerHTML = `${weight} is not a valid weight plz enter a valid weight `
+        else if (height == '' || height < 0 && height > 200 || isNaN(height))
+            req.innerHTML = `${height} is not a valid height plz enter a valid height `
+        else {
+            const result = weight /( Math.pow(height,2)/10000).toFixed(2)
+            req.innerHTML = result
+        }
+    })
+</script>
+
+</html>

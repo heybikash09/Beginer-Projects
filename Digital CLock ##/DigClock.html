@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <div>
+        <h1 >TIME</h1>
+        <div id="res">ask</div>
+    </div>
+</body>
+<style>
+    body{
+        position: relative;
+    }
+    h1{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        color:cornsilk;
+        background: #0667e6;
+        padding: 10px;
+        height: 40px;
+        width: 70px;
+        margin-top: 100px;
+        margin-left: 200px;
+    }
+    #res{
+        position: relative;
+        background-color:khaki;
+        height: 40px;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        margin-left: 200px;
+        align-items: center;
+    }
+</style>
+<script>
+    const result=document.querySelector('#res')
+    setInterval(()=>{
+        const dt=new Date()
+       result.innerHTML=dt.toLocaleTimeString()
+    },1000)
+</script>
+</html>
